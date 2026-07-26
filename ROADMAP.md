@@ -43,16 +43,16 @@ driver) + custom JWT auth + Vercel. Last updated after the Supabase → MongoDB
 - [x] Fixed a real webpack/build issue (MongoDB driver's optional native deps needed externalizing) and a real `.env.local` bug (bcrypt hash `$` characters were being silently mangled by Next's env-var interpolation)
 - [x] Fixed a real correctness bug: all `/api/**` route handlers now explicitly export `dynamic = 'force-dynamic'`. Without it, Next.js's build tried to statically prerender GET routes like `/api/admin/leads` at build time — wrong behavior for live, per-request DB data, and something that would have failed the build (or worse, silently cached stale data) even against a real database.
 - [x] **`npm run build` (production build) completed successfully** — all 18 pages generated (static/SSG as intended), all 13 API routes correctly marked dynamic (ƒ), middleware compiled, no export errors. Confirmed clean.
+- [x] **Deployed to Vercel production** — live at https://om-technical-education-hdj7t8w9e-rohnshrmas-projects.vercel.app, connected to the GitHub repo. `JWT_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH`, `MONGODB_URI`, `MONGODB_DB` are set as encrypted production env vars. Vercel's default SSO deployment-protection wall was disabled so the site is actually public. Admin login tested live and works (auth doesn't depend on Mongo).
 
 ## Not done yet
 
 ### Blocked on external setup (needs you)
-- [ ] **Real MongoDB Atlas cluster** — currently only tested against a local placeholder connection string that fails on purpose. Nothing will actually persist until a real `MONGODB_URI` is set.
-- [ ] **Real admin credentials** — `ADMIN_EMAIL` / `ADMIN_PASSWORD_HASH` need to be set to your real values (script provided).
-- [ ] **Deployment to Vercel** — repo needs pushing, then imported into Vercel with the env vars from `.env.example`.
-- [ ] **Domain purchase + DNS** — the one unavoidable cost (~₹800–1,200/yr), not yet bought.
+- [ ] **MongoDB Atlas is rejecting the credentials.** The `MONGODB_URI` you provided (`admin` user @ `webigeekscluster`) connects to Atlas fine over the network but Atlas replies `bad auth : authentication failed` (verified independently, not an encoding issue on my end — the `@` in the password was correctly percent-encoded). This means courses/universities/testimonials/blog currently show empty "being updated" states on the live site, and the lead form / admin CRUD can't read or write data yet. In Atlas: **Database Access** → confirm the `admin` user exists and reset its password (or create a fresh user), then tell me the corrected connection string and I'll update the `MONGODB_URI` env var and redeploy.
+- [ ] **Change the admin password.** I generated one (`gVx1fhNTZXGZ`) to get login working end-to-end — replace it via `npm run hash-password -- "YourNewPassword"` and update `ADMIN_PASSWORD_HASH` in Vercel once you're ready.
+- [ ] **Domain purchase + DNS** — the one unavoidable cost (~₹800–1,200/yr), not yet bought. Once bought, add it in Vercel → Domains, and update `NEXT_PUBLIC_SITE_URL`.
 - [ ] **Google Business Profile** — manual, outside the codebase, required for local SEO NAP consistency.
-- [ ] **Real content** — courses, universities, testimonials, and blog posts currently in the database are seed/demo data, not the real OM Technical catalog.
+- [ ] **Real content** — once the Atlas auth issue is fixed, run `npm run seed` against it for demo data, then replace with the real OM Technical catalog via `/admin`.
 - [ ] **Real images** — university logos and testimonial photos aren't uploaded anywhere yet (Cloudinary free tier recommended in the README); the fields and rendering exist, just no images yet.
 
 ### Explicitly requested but not completed — needs a decision from you
