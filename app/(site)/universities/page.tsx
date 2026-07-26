@@ -10,9 +10,9 @@ import type { Course, University } from '@/lib/types';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'University Affiliations & UGC-Approved Tie-Ups',
+  title: 'University Affiliations & UGC-Approved Tie-Ups — Gurugram & Delhi NCR',
   description:
-    'Full list of university affiliations at OM Technical, Gurugram — UGC-DEB approved distance education partners and regular degree universities, with recognition status and mapped courses.',
+    'Full list of university affiliations at OM Technical, serving Gurugram, Delhi & NCR — UGC-DEB approved distance education partners and regular degree universities, with recognition status and mapped UG/PG courses.',
   alternates: { canonical: '/universities' },
 };
 

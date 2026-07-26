@@ -14,9 +14,9 @@ import type { Course, Testimonial, University } from '@/lib/types';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Distance & Regular Degree Admission Guidance in Gurugram Since 2006',
+  title: 'UG & PG Distance and Regular Degree Admission Guidance — Gurugram, Delhi & NCR',
   description:
-    'OM Technical and Management Education — genuine admission guidance for distance & regular degree courses in Gurugram. UGC-approved university tie-ups, no fake promises, 18+ years of trust.',
+    'OM Technical and Management Education — genuine UG & PG admission guidance for distance & regular degree courses in Gurugram, Delhi and NCR. UGC-approved university tie-ups, no fake promises, 18+ years of trust.',
   alternates: { canonical: '/' },
 };
 
@@ -67,11 +67,12 @@ export default async function HomePage() {
               Serving students since {BUSINESS.foundedYear} &middot; {BUSINESS.yearsOfExperience}+ years of trust
             </span>
             <h1 className="mt-4 text-3xl font-extrabold leading-tight text-navy-900 sm:text-4xl lg:text-5xl">
-              Genuine Admission Guidance for Distance &amp; Regular Degree Courses in Gurugram
+              Genuine UG &amp; PG Admission Guidance for Distance &amp; Regular Degree Courses in Gurugram &amp; Delhi NCR
             </h1>
             <p className="mt-4 text-lg text-navy-600">
-              {BUSINESS.name} has helped students across Gurugram make informed, fraud-free
-              admission decisions since {BUSINESS.foundedYear}. We work only with recognized,
+              {BUSINESS.name} has helped undergraduate and postgraduate students across
+              Gurugram, Delhi and the wider NCR make informed, fraud-free admission
+              decisions since {BUSINESS.foundedYear}. We work only with recognized,
               UGC-approved university tie-ups &mdash; from our physical office in Sector 14, not
               over the phone.
             </p>

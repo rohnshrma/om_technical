@@ -11,9 +11,9 @@ import type { Course } from '@/lib/types';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Courses — Distance & Regular Degree Programs (Technical & Management)',
+  title: 'UG & PG Courses — Distance & Regular Degree Programs, Gurugram & Delhi NCR',
   description:
-    'Browse distance and regular degree courses in Gurugram across Technical and Management streams — BBA, MBA, BCA, MCA, B.Tech and more, with affiliated university details. No fees listed.',
+    'Browse UG and PG distance and regular degree courses in Gurugram, Delhi & NCR across Technical and Management streams — BBA, MBA, BCA, MCA, B.Tech and more, with affiliated university details. No fees listed.',
   alternates: { canonical: '/courses' },
 };
 
@@ -58,12 +58,13 @@ export default async function CoursesPage() {
 
       <header className="max-w-3xl">
         <h1 className="text-3xl font-extrabold text-navy-900 sm:text-4xl">
-          Distance &amp; Regular Degree Courses in Gurugram
+          UG &amp; PG Distance &amp; Regular Degree Courses in Gurugram &amp; Delhi NCR
         </h1>
         <p className="mt-3 text-navy-600">
           Every course below is offered through a recognized, affiliated university.
           We provide guidance on eligibility, duration and process &mdash; not fee
-          negotiation. Contact us for full details on any program.
+          negotiation. Contact us for full details on any program, whether you&rsquo;re
+          based in Gurugram, Delhi, Noida, Faridabad, or elsewhere in the NCR.
         </p>
       </header>
 

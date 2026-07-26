@@ -284,6 +284,34 @@ OM Technical has operated from the same physical address in Gurugram since 2006.
       category: 'Guidance',
       tags: ['UGC DEB', 'admission fraud', 'distance education'],
     },
+    {
+      title: 'UG & PG Admission Guidance in Gurugram, Delhi & NCR: A Student’s Checklist',
+      slug: 'ug-pg-admission-guidance-gurugram-delhi-ncr',
+      content: `## Choosing the Right Undergraduate or Postgraduate Path
+
+Students across Gurugram, Delhi, Noida, and Faridabad face the same core decision every admission season: which UG or PG course, which mode (distance or regular), and which university actually delivers on its promises.
+
+### Questions to Ask Before You Enroll Anywhere in the NCR
+1. Is the university UGC-DEB approved for this specific program and year (for distance courses)?
+2. Does the admission center have a real, visitable office — not just a phone number and a WhatsApp account?
+3. Can they show you official recognition documents in writing, without pressure to pay first?
+4. Do they list courses and university tie-ups clearly, or only vague promises?
+
+### Why Location Still Matters, Even for Distance Programs
+Even though distance education doesn't require regular attendance, having a local counsellor in Gurugram who understands NCR students' specific concerns — commute for regular programs, employer recognition for distance degrees, and document verification — makes the process far less confusing than dealing with a call-center-only agent.
+
+### Our Approach
+OM Technical has guided UG and PG admissions for students across Gurugram, Delhi, and the wider NCR since 2006, from the same Sector 14 office. We only work with recognized, UGC-approved university tie-ups, and we never charge for an initial consultation.`,
+      excerpt:
+        'A practical checklist for choosing a UG or PG distance or regular degree course in Gurugram, Delhi, or the NCR — and how to spot a genuine admission counsellor.',
+      featuredImage: null,
+      metaTitle: 'UG & PG Admission Guidance in Gurugram, Delhi & NCR | OM Technical',
+      metaDescription:
+        'A student checklist for choosing UG/PG distance or regular degree courses in Gurugram, Delhi & NCR, and how to verify a genuine admission consultancy.',
+      status: 'published',
+      category: 'Guidance',
+      tags: ['UG admission', 'PG admission', 'Delhi NCR', 'Gurugram'],
+    },
   ];
 
   let blogCount = 0;

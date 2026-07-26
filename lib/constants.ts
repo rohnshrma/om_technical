@@ -19,7 +19,8 @@ export const BUSINESS = {
   mapEmbedSrc:
     'https://www.google.com/maps?q=Old+DLF+Colony+Sector+14+Gurugram+Haryana&output=embed',
   mapLink: 'https://www.google.com/maps/search/?api=1&query=Old+DLF+Colony+Sector+14+Gurugram+Haryana',
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.omtechnicaleducation.in',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://omtechmgt.com',
+  areaServed: ['Gurugram', 'Delhi', 'New Delhi', 'Delhi NCR', 'Noida', 'Faridabad', 'Haryana'],
 };
 
 export function whatsappLink(message?: string) {

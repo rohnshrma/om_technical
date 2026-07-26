@@ -26,6 +26,7 @@ export function organizationSchema() {
       '@type': 'Person',
       name: BUSINESS.owner,
     },
+    areaServed: BUSINESS.areaServed.map((name) => ({ '@type': 'City', name })),
   };
 }
 
@@ -47,6 +48,7 @@ export function localBusinessSchema() {
     },
     url: BUSINESS.siteUrl,
     priceRange: '$$',
+    areaServed: BUSINESS.areaServed.map((name) => ({ '@type': 'City', name })),
   };
 }
 
