@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getBlogPostCollection, mapBlogPost } from '@/lib/models/blogPost';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const collection = await getBlogPostCollection();
   const docs = await collection.find().sort({ createdAt: -1 }).toArray();

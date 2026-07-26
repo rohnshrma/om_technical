@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getLeadCollection } from '@/lib/models/lead';
 import { BUSINESS } from '@/lib/constants';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: Request) {
   let body: {
     name?: string;

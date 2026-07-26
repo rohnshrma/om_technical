@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getUniversityCollection, mapUniversity } from '@/lib/models/university';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const collection = await getUniversityCollection();
   const docs = await collection.find().sort({ name: 1 }).toArray();

@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
 import { getLeadCollection } from '@/lib/models/lead';
 
+export const dynamic = 'force-dynamic';
+
 const VALID_STATUSES = ['New', 'Contacted', 'Converted', 'Lost'];
 
 export async function PATCH(request: Request, { params }: { params: { id: string } }) {

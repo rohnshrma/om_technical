@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getTestimonialCollection, mapTestimonial } from '@/lib/models/testimonial';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const collection = await getTestimonialCollection();
   const docs = await collection.find().sort({ createdAt: -1 }).toArray();

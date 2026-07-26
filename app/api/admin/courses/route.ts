@@ -3,6 +3,8 @@ import { ObjectId } from 'mongodb';
 import { getCourseCollection, mapCourse } from '@/lib/models/course';
 import { getUniversityCollection } from '@/lib/models/university';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const [courses, universities] = await Promise.all([
     (await getCourseCollection()).find().sort({ createdAt: -1 }).toArray(),

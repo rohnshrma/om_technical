@@ -41,6 +41,8 @@ driver) + custom JWT auth + Vercel. Last updated after the Supabase → MongoDB
 - [x] Full auth flow tested live (curl): correct login → cookie issued; wrong password → 401; protected API without cookie → 401; protected API/page with cookie → passes; logout → cookie cleared and access immediately revoked
 - [x] Lead capture validation tested live: valid payload reaches the DB layer; invalid phone / missing name correctly rejected with 400
 - [x] Fixed a real webpack/build issue (MongoDB driver's optional native deps needed externalizing) and a real `.env.local` bug (bcrypt hash `$` characters were being silently mangled by Next's env-var interpolation)
+- [x] Fixed a real correctness bug: all `/api/**` route handlers now explicitly export `dynamic = 'force-dynamic'`. Without it, Next.js's build tried to statically prerender GET routes like `/api/admin/leads` at build time — wrong behavior for live, per-request DB data, and something that would have failed the build (or worse, silently cached stale data) even against a real database.
+- [x] **`npm run build` (production build) completed successfully** — all 18 pages generated (static/SSG as intended), all 13 API routes correctly marked dynamic (ƒ), middleware compiled, no export errors. Confirmed clean.
 
 ## Not done yet
 
@@ -52,9 +54,6 @@ driver) + custom JWT auth + Vercel. Last updated after the Supabase → MongoDB
 - [ ] **Google Business Profile** — manual, outside the codebase, required for local SEO NAP consistency.
 - [ ] **Real content** — courses, universities, testimonials, and blog posts currently in the database are seed/demo data, not the real OM Technical catalog.
 - [ ] **Real images** — university logos and testimonial photos aren't uploaded anywhere yet (Cloudinary free tier recommended in the README); the fields and rendering exist, just no images yet.
-
-### Not yet verified in this environment
-- [ ] **A full `npm run build` (production build) has not completed successfully in this sandbox.** The dev server, typecheck, and full functional/auth testing all pass — but the sandbox machine was under heavy concurrent load (multiple apps + another Claude Code session running at the same time, load average 12–23, ~65MB free RAM) and the build's multi-process compile step couldn't get scheduled. Two real bugs the build surfaced along the way *were* found and fixed (mongodb/webpack externals, `.env` `$`-escaping). Run `npm run build` locally or let Vercel build it on deploy — it does not depend on this sandbox's resource state.
 
 ### Explicitly requested but not completed — needs a decision from you
 - [ ] **"Top-class," fully polished responsive design pass.** You asked for this, but the conversation pivoted into the MongoDB/MERN migration before it was done. Specifically still outstanding:
