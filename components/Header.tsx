@@ -44,8 +44,8 @@ export default function Header() {
           </span>
           <span className="min-w-0 leading-tight">
             <span className="block truncate text-sm font-bold text-navy-900 sm:text-base">
-              <span className="sm:hidden">OM Technical</span>
-              <span className="hidden sm:inline">{BUSINESS.name}</span>
+              <span className="lg:hidden">OM Technical</span>
+              <span className="hidden lg:inline">{BUSINESS.name}</span>
             </span>
             <span className="block text-xs font-medium text-gold-600">
               Serving students since {BUSINESS.foundedYear}
@@ -58,7 +58,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`relative rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+              className={`relative whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium transition-colors xl:px-3 ${
                 isActive(link.href)
                   ? 'text-navy-900'
                   : 'text-navy-600 hover:bg-navy-50 hover:text-navy-900'
@@ -75,7 +75,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <a
             href={`tel:+91${BUSINESS.phone}`}
-            className="hidden rounded-md border border-navy-200 px-3 py-2 text-sm font-semibold text-navy-800 hover:border-navy-400 lg:inline-block"
+            className="hidden whitespace-nowrap rounded-md border border-navy-200 px-3 py-2 text-sm font-semibold text-navy-800 hover:border-navy-400 xl:inline-block"
           >
             Call {BUSINESS.phone}
           </a>
